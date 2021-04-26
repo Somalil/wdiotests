@@ -1,5 +1,5 @@
 import LoginPage from '../pageobjects/login.page';
-import ProfilePage from '../pageobjects/profile.page';
+import ProfilePage from '../pageobjects/portal/profile.portal.page';
 
 describe('Auth', () => {
     beforeEach(() => {
@@ -8,12 +8,11 @@ describe('Auth', () => {
 
     afterEach(() => {
         browser.execute('window.localStorage.clear()');
-        browser.refresh();
     });
 
     it('should login with valid data', () => {
         LoginPage.setLogin('mevibe8861@leonvero.com');
-        LoginPage.setPassword('690844');
+        LoginPage.setPassword('690844234');
         LoginPage.clickSubmitButton();
         ProfilePage.isOpen();
     });
@@ -27,6 +26,11 @@ describe('Auth', () => {
         LoginPage.setPassword('12345235');
         LoginPage.clickSubmitButton();
         LoginPage.errorToastAppeared();
+    });
+
+    it('Login input is required', () => {
+        LoginPage.setPassword();
+        LoginPage.isSubmitButtonDisabled();
     });
 
 });

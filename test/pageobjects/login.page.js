@@ -6,9 +6,10 @@ class LoginPage extends Page {
     get inputPassword () { return $('#normal_login_password'); }
     get buttonSubmit () { return $('.login-form-button'); }
     get errorToast () { return $('.ant-notification-notice-message'); }
+    get loginButton () { return $('[data-qa=\'login\']'); }
 
     open () {
-        return super.open('/');
+        return super.open('/user/login');
     }
 
     setLogin (email) {
