@@ -12,7 +12,7 @@ describe('Auth', () => {
 
     it('should login with valid data', () => {
         LoginPage.setLogin('mevibe8861@leonvero.com');
-        LoginPage.setPassword('690844234');
+        LoginPage.setPassword('690844');
         LoginPage.clickSubmitButton();
         ProfilePage.isOpen();
     });
