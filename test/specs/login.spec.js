@@ -22,8 +22,8 @@ describe('Auth', () => {
     });
 
     it('fails if invalid data provided', async () => {
-        await LoginPage.setLogin('ex@es.com');
-        await LoginPage.setPassword('12345235');
+        await LoginPage.setLogin('ex@ex.com');
+        await LoginPage.setPassword('321321');
         await LoginPage.clickSubmitButton();
         await LoginPage.errorToastAppeared();
     });

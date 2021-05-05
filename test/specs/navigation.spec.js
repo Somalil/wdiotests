@@ -7,7 +7,7 @@ import ChallangePage from '../pageobjects/portal/challange.portal.page'
 describe('Navigation', () => {
 
     before(() => {
-        browser.login('mevibe8861@leonvero.com', '690844');
+        browser.login(process.env.LOGIN, process.env.PASSWORD);
     });
 
     beforeEach(() => {

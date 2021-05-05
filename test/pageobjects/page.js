@@ -9,3 +9,4 @@ export default class Page {
             await element.keys(['Backspace'])
     }
 }
+

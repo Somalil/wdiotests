@@ -10,6 +10,7 @@ exports.config = {
             browserName: 'firefox',
             'moz:firefoxOptions' : {
                 args: [
+                    "--headless",
                     "--width=1280",
                     "--height=720"
                 ]
