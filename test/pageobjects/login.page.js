@@ -8,28 +8,28 @@ class LoginPage extends Page {
     get errorToast () { return $('.ant-notification-notice-message'); }
     get loginButton () { return $('[data-qa=\'login\']'); }
 
-    open () {
+    async open () {
         return super.open('/user/login');
     }
 
-    setLogin (email) {
-        this.inputUsername.setValue(email);
+    async setLogin (email) {
+        return (await this.inputUsername).setValue(email);
     }
 
-    setPassword (password) {
-        this.inputPassword.setValue(password);
+    async setPassword (password) {
+        return (await this.inputPassword).setValue(password);
     }
 
-    clickSubmitButton() {
-        this.buttonSubmit.click();
+    async clickSubmitButton() {
+        (await this.buttonSubmit).click();
     }
 
-    isSubmitButtonDisabled() {
+    async isSubmitButtonDisabled() {
         expect(this.buttonSubmit).toBeDisabled();
     }
 
-    errorToastAppeared() {
-        expect(this.errorToast).toBeDisplayed();
+    async errorToastAppeared() {
+        return expect(await this.errorToast).toBeDisplayed();
     }
 }
 
