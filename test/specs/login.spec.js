@@ -15,6 +15,7 @@ describe('Auth', () => {
         await LoginPage.setPassword(process.env.PASSWORD);
         await LoginPage.clickSubmitButton();
         await ProfilePage.isOpen();
+        const text = await (await $('h1')).getText()
     });
 
     it('submit button is disabled if login and password are absent', async () => {

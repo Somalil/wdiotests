@@ -16,7 +16,6 @@ exports.config = {
             },
         },
     ],
-    services: ['geckodriver'],
     ...base,
     ...hooks
 }

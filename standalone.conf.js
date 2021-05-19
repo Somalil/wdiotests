@@ -2,7 +2,9 @@ const hooks = require('./config/hooks.conf');
 const base = require('./config/base.conf');
 
 exports.config = {
-    runner: 'local',
+    host: 'localhost',
+    port: 4444,
+    path: '/wd/hub',
     maxInstances: 1,
     capabilities: [
         {
